@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31025.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisionLayoutDetection", "VisionLayoutDetection\VisionLayoutDetection.csproj", "{A74F97AB-C2C1-496B-A90A-DA2A657C346C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A74F97AB-C2C1-496B-A90A-DA2A657C346C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A74F97AB-C2C1-496B-A90A-DA2A657C346C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A74F97AB-C2C1-496B-A90A-DA2A657C346C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A74F97AB-C2C1-496B-A90A-DA2A657C346C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3F1913D3-20E6-44E6-8833-2DFE5C478875}
+	EndGlobalSection
+EndGlobal
