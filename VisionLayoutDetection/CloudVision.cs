@@ -9,7 +9,7 @@ namespace CloudVision
     public class Vision
     {
 
-        public static string PrintStrings(string path, string expectStrings)
+        public static List<string> PrintStrings(string path, string[] expectedStrings)
         {
             //var path = "D:\\Dev\\VisionTest\\IKGAME-897.png";
             // Instantiates a client
@@ -18,7 +18,7 @@ namespace CloudVision
             //var image = Image.FromFile("D:\\Dev\\VisionTest\\IKGAME-897.png");
             // Performs text detection on the image file
             //var response = client.DetectDocumentText(image);
-
+            List<string> results = new List<string> { };
             var response = ProcessImage(path);
 
             List<string> paraList = new List<string> { };
@@ -43,10 +43,14 @@ namespace CloudVision
                     }
                 }
             }
-            var expected = "Configurações";
+            //var expected = "Configurações";
             //Console.WriteLine(MatchString(paraList, expected));
             //DisplayResult(MatchString(paraList, expected));
-            return MatchString(paraList, expected);
+            foreach (var str in expectedStrings)
+            {
+                results.Add(MatchString(paraList, str));
+            }
+            return results;
 
         }
 
