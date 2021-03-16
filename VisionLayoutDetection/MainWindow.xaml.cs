@@ -22,12 +22,7 @@ namespace VisionLayoutDetection
     public partial class MainWindow : Window
     {
 
-        public string Result
-        {
-            get { return ResultTextBlock.Text; }
-            set { ResultTextBlock.Text = value; }
-        }
-
+  
         public MainWindow()
         {
             InitializeComponent();
@@ -39,8 +34,7 @@ namespace VisionLayoutDetection
             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog
             {
                 // Set filter for file extension and default file extension 
-                DefaultExt = ".png",
-                Filter = "JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif"
+                Filter = "PNG Files (*.png)|*.png|JPEG Files (*.jpeg)|*.jpeg|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif"
             };
 
 
@@ -77,7 +71,9 @@ namespace VisionLayoutDetection
         private void CallVision(object sender, RoutedEventArgs e)
         {
             var result = Vision.PrintStrings(FileTextBox.Text, StringTextBox.Text);
-            ResultTextBlock.Text = result;
+            ResultBox.ItemsSource = result;
+
+            Original.ItemsSource = Vision.ShowFoundStrings(FileTextBox.Text);
         }
 
         

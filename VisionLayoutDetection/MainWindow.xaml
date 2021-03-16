@@ -12,7 +12,8 @@
         <Button x:Name="StringButton" Content="Browse" HorizontalAlignment="Left" Margin="453,178,0,0" VerticalAlignment="Top" Click="StringSelect"/>
         <TextBox x:Name="StringTextBox" HorizontalAlignment="Left" Margin="187,180,0,0" Text="String Lit" TextWrapping="Wrap" VerticalAlignment="Top" Width="241"/>
         <Button x:Name="Start" Content="Detect" HorizontalAlignment="Left" Margin="284,238,0,0" VerticalAlignment="Top" Click="CallVision"/>
-        <TextBlock x:Name="ResultTextBlock" HorizontalAlignment="Left" Margin="153,275,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Height="120" Width="402"/>
+        <ListBox x:Name="ResultBox" Margin="49,280,506,52"/>
+        <ListBox x:Name="Original" Margin="350,280,56,52"/>
 
     </Grid>
 </Window>
