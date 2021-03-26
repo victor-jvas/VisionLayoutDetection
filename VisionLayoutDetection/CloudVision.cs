@@ -11,14 +11,7 @@ namespace CloudVision
 
         public static List<string> PrintStrings(string imgPath, string strPath)
         {
-            //var path = "D:\\Dev\\VisionTest\\IKGAME-897.png";
-            // Instantiates a client
-            //fvar client = ImageAnnotatorClient.Create();
-            // Load the image file into memory
-            //var image = Image.FromFile("D:\\Dev\\VisionTest\\IKGAME-897.png");
-            // Performs text detection on the image file
-            //var response = client.DetectDocumentText(image);
-            
+
             List<string> results = new List<string> { };
 
             List<string> expectedStrings = ReadStringsFile(strPath);
@@ -26,11 +19,7 @@ namespace CloudVision
             var response = ProcessImage(imgPath);
 
             List<string> strList = DetectLines(response);
-           
             
-            //var expected = "Configurações";
-            //Console.WriteLine(MatchString(paraList, expected));
-            //DisplayResult(MatchString(paraList, expected));
 
             foreach (var str in expectedStrings)
             {
@@ -72,15 +61,11 @@ namespace CloudVision
         {
             var match = text.Any(stringToCheck => string.Equals(stringToCheck.Trim(), expected));
 
-            if (!match)
-            {
-                var aux = "Erro na String: \"" + expected + "\"";
-                //DisplayResult(aux);
-                //Console.WriteLine("Erro na String: \"" + expected + "\"");
-                return aux;
-            }
-                
-            return "No Error";
+            if (match) return null;
+
+            var aux = "Erro na String: \"" + expected + "\"";
+            return aux;
+
         }
 
         public static TextAnnotation ProcessImage(string path)
